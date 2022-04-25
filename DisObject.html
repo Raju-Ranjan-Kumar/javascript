@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disappear object</title>
+    <style>
+        .circle{
+            width: 150px;
+            height: 150px;
+            /* border-radius: 50%; */
+            float: left;
+            margin-right: 50px;
+            text-align: center;
+        }
+        #red-circle{
+            background-color: red;
+        }
+        #blue-circle{
+            background-color: blue;
+        }
+        #yellow-circle{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle" id="red-circle"> Red </div>
+    <div class="circle" id="blue-circle"> Blue </div>
+    <div class="circle" id="yellow-circle"> Yellow </div>
+    <script>
+        document.getElementById("red-circle").onclick=function(){
+            document.getElementById("red-circle").style.display="none";
+        }
+        document.getElementById("blue-circle").onclick=function(){
+            document.getElementById("blue-circle").style.borderRadius="300px";
+        }
+        document.getElementById("yellow-circle").onclick=function(){
+            document.getElementById("yellow-circle").style.backgroundColor="brown";
+        }
+        // document.getElementById("red-circle").onclick=function(){
+        //     document.getElementById("red-circle").innerHTML="Hello World";
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet star pattern in javascript</title>
+    <style>
+        body{background-color: black;}
+        #main{padding:0rem 5rem 4rem 5rem; margin-left:475px; background-color:fuchsia; border: 3px solid black; border-radius:12px;}
+        h1{font-size:42px; font-weight:bold; color:white; text-decoration:underline;}
+        input{height:30px; border:2px solid black; border-radius:7px; text-align:center; margin-left:30px;}
+        button{height:35px; width:80px; font-size:16px; font-weight: bold; border:2px solid black; border-radius:7px; background-color:green; color:white; margin-left:73px;}
+        button:hover{background-color:blue}
+        button:active{transform: translateY(3px);}
+        div{ display:inline-block; padding:10px; color: blue; background-color:white;}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Star Pattern</h1>
+        <input type="text" name="name" id="name" placeholder="Enter your name"><br><br>
+        <button id="submit">Submit!</button>
+    </div>
+
+    <div id="first"></div>
+    <section id="container"> </section>
+
+    <script>
+        var arr = {
+            "A":["<pre>********<br>*      *<br>*      *<br>********<br>*      *<br>*      *<br>*      *</pre>"],
+            "B":["<pre>*******<br>*      *<br>*      *<br>*******<br>*      *<br>*      *<br>*******</pre>"],
+            "C":["<pre> *******<br>*<br>*<br>*<br>*<br>*<br> *******</pre>"],
+            "D":["<pre>********<br>   *   *<br>   *   *<br>   *   *<br>   *   *<br>   *   *<br>********</pre>"],
+            "E":["<pre>*******<br>*<br>*<br>*******<br>*<br>*<br>*******</pre>"],
+            "F":["<pre>*******<br>*<br>*<br>*******<br>*<br>*<br>*</pre>"],
+            "G":["<pre>*<br>*<br>*<br>*  ****<br>*  *  *<br>*  *  *<br>****  *</pre>"],
+            "H":["<pre>*     *<br>*     *<br>*     *<br>*******<br>*     *<br>*     *<br>*     *</pre>"],
+            "I":["<pre>*******<br>   *<br>   *<br>   *<br>   *<br>   *<br>*******</pre>"],
+            "J":["<pre>      *<br>      *<br>      *<br>*     *<br>*     *<br>*     *<br>*******</pre>"],
+            "K":["<pre>*     *<br>*    *<br>*  *<br>* *<br>*  *<br>*    *<br>*     *</pre>"],
+            "L":["<pre>*<br>*<br>*<br>*<br>*<br>*<br>*******</pre>"],
+            "M":["<pre>*       *<br>* *   * *<br>*   *   *<br>*       *<br>*       *<br>*       *<br>*       *</pre>"],
+            "N":["<pre>*       *<br>**      *<br>*  *    *<br>*   *   *<br>*     * *<br>*      **<br>*       *</pre>"],
+            "O":["<pre>********<br>*      *<br>*      *<br>*      *<br>*      *<br>*      *<br>********</pre>"],
+            "P":["<pre>*******<br>*      *<br>*      *<br>*******<br>*<br>*<br>*</pre>"],
+            "Q":["<pre>********<br>*      *<br>*      *<br>*      *<br>*    * *<br>********<br>        *</pre>"],
+            "R":["<pre>*******<br>*     *<br>*     *<br>*******<br>*   *<br>*    *<br>*     *</pre>"],
+            "S":["<pre>*******<br>*<br>*<br>*******<br>      *<br>      *<br>*******</pre>"],
+            "T":["<pre>********<br>   *<br>   *<br>   *<br>   *<br>   *<br>   *</pre>"],
+            "U":["<pre>*      *<br>*      *<br>*      *<br>*      *<br>*      *<br>*      *<br>********</pre>"],
+            "V":["<pre>*           *<br> *         *<br>  *       *<br>   *     *<br>    *   *<br>     * *<br>      *</pre>"],
+            "W":["<pre>*     *<br>*     *<br>*     *<br>*  *  *<br>* * * *<br>**   **<br>*     *</pre>"],
+            "X":["<pre>*     *<br> *   *<br>  * *<br>   *<br>  * *<br> *   *<br>*     *</pre>"],
+            "Y":["<pre>*      *<br> *    *<br>  *  *<br>   *<br>  *<br> *<br>*</pre>"],
+            "Z":["<pre>*******<br>     *<br>    *<br>   *<br>  *<br> *<br>********<pre>"],
+            "Space":["<pre>      <br>      <br>      <br>      <br>      <br>      <br>      </pre>"]
+        }
+        // document.write(arr.Z)       // it is used to print Z
+
+        function printName(){
+            let value=document.getElementById("name").value;
+            console.log(value);
+
+            // let value ="abcdefghijklmnopqrstuvwxyz";
+            let char=value.split('');
+            console.log(char);
+
+            for(let i=0; i<char.length; i++){
+                console.log(char[i]);
+
+                if(char[i]=="A" || char[i]=="a" ){
+                    let box=document.createElement('div')
+                    box.innerHTML=arr.A;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="B" || char[i]=="b" ){
+                    let box=document.createElement('div')
+                    box.innerHTML=arr.B;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="C" || char[i]=="c" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.C;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="D" || char[i]=="d" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.D;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="E" || char[i]=="e" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.E;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="F" || char[i]=="f" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.F;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="G" || char[i]=="g" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.G;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="H" || char[i]=="h" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.H;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="I" || char[i]=="i" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.I;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="J" || char[i]=="j" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.J;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="K" || char[i]=="k" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.K;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="L" || char[i]=="l" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.L;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="M" || char[i]=="m" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.M;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="N" || char[i]=="n" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.N;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="O" || char[i]=="o" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.O;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="P" || char[i]=="p" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.P;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="Q" || char[i]=="q" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.Q;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="R" || char[i]=="r" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.R;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="S" || char[i]=="s" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.S;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="T" || char[i]=="t" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.T;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="U" || char[i]=="u" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.U;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="V" || char[i]=="v" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.V;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="W" || char[i]=="w" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.W;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="X" || char[i]=="x" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.X;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="Y" || char[i]=="y" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.Y;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]=="Z" || char[i]=="z" ){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.Z;
+                    document.getElementById('container').appendChild(box);
+                }
+                if(char[i]==" "){
+                    let box=document.createElement('div');
+                    box.innerHTML=arr.Space;
+                    document.getElementById('container').appendChild(box);
+                }
+            }
+        }
+        document.getElementById("submit").addEventListener("click",printName)
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reg_Form</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url('CodeAegis.jpg');
+            background-size: cover;
+        }
+        h1{
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline;
+            color:blue;
+            font-size:40px;
+        }
+        div{
+            margin: auto;
+        }
+        #container{
+            border: 4px solid blue;
+            width: 30%;
+            padding: 20px 30px;
+            margin-top: 20px;
+            background-color: wheat;
+            border-radius: 10px;
+            text-align: center;
+            opacity: 0.8;
+        }
+        input{
+            height: 26px;
+            border-radius: 8px;
+        }
+        #submit{
+            width: 60px;
+            background-color: green;
+        }
+        #reset{
+            width: 60px;
+            background-color: red;
+        }
+        .error{
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the CodeAegis</h1>
+    <div id="container">
+        <form action="" name="Reg_Form" onsubmit="return validate()">
+            Name: <input type="text" id="name" ><br> <span id="n_error" class="error"></span><br>
+            Email: <input type="email" id="email" ><br> <span id="e_error" class="error"></span><br>
+            Age:&nbsp;&nbsp;<input type="number" id="age"><br><span id="a_error" class="error"></span><br>
+            Gender:&nbsp;<input type="radio" name="gender" id="male" value="male">Male <input type="radio" name="gender" id="female" value="female">Female
+                <br><span id="gender" class="error"></span><br>
+            Password: <input type="password" id="password"><br> <span id="p_error" class="error"></span><br>
+            Conf_Password: <input type="password" id="c_pass"><br> <span id="cp_error" class="error"></span><br>
+            <input id="submit" type="submit"> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="reset" type="reset">
+        </form>
+    </div>
+    <script>
+        var u_name=document.getElementById("name");
+        var u_email=document.getElementById("email");
+        var u_age=document.getElementById("age");
+        var u_password=document.getElementById("password");
+        var con_password=document.getElementById("c_pass");
+        var flag=1;
+
+        function validate(){
+            var rdb1=document.getElementById("male");
+            var rdb2=document.getElementById("female");
+        
+            //Name section
+            if(u_name.value==""){
+                document.getElementById("n_error").innerHTML="**Name is empty!";
+                flag= 0;
+            }else if (u_name.value.length<3) {
+                document.getElementById("n_error").innerHTML="**Name is required minimum 3 charactor!";
+                flag=0;
+            }else{
+                document.getElementById("n_error").innerHTML="";
+                flag=1;
+            }
+            //email section
+            if(u_email.value.length==""){
+                document.getElementById("e_error").innerHTML="**Email is empty!";
+                flag= 0;
+            }else if(u_email.value.length<8){
+                document.getElementById("e_error").innerHTML="**Email is required minimum 8 charactor!";
+                flag=0;
+            }else if(u_email.indexOf('@')==0){
+                document.getElementById("e_error").innerHTML="**@ is not a right position!";
+                flag=0;
+            }else{
+                document.getElementById("e_error").innerHTML="";
+                flag=1;
+            }
+            // //Age section
+            if(!u_age.value){
+                document.getElementById("a_error").innerHTML="**Age is empty!";
+                flag=0;
+            }
+            else if(u_age.value==0){
+                document.getElementById("a_error").innerHTML="**Please enter valid age!";
+                flag=0;
+            }else{
+                document.getElementById("a_error").innerHTML="";
+                flag=1;
+            }
+            //Gender section
+            if(rdb1.checked==true){
+                document.getElementById("gender").innerHTML="";
+            }else if(rdb2.checked==true){
+                document.getElementById("gender").innerHTML="";
+            }else{
+                document.getElementById("gender").innerHTML="**Please select atleast one option!";
+            }
+            //Password section
+            if(u_password.value==""){
+                document.getElementById("p_error").innerHTML="**Password is empty!";
+                flag=0;
+            }else if(u_password.value.length<6){
+                document.getElementById("p_error").innerHTML="**Password is to short!";
+                flag=0;
+            }else{
+                document.getElementById("p_error").innerHTML="";
+                flag=1;
+            }
+            // //confirm password
+            if(con_password.value==""){
+                document.getElementById("cp_error").innerHTML="**Confirm Password is empty!";
+                flag=0;
+            }else if(con_password.value!=u_password.value){
+                document.getElementById("cp_error").innerHTML="**Confirm Password and password is not same!";
+                flag=0;
+            }else{
+                document.getElementById("cp_error").innerHTML="";
+                flag=1;
+            }
+            //result check
+            if (flag) {
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

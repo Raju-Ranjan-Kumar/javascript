@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        #container{background-color:hsl(200,100%,50%); width: 400px; text-align: center; margin: auto; border: 2px solid gray; border-radius: 10px;}
+        #txt{background-color:wheat;  width: 36%; text-align: center; margin: auto; margin-bottom: 15px; border-radius:8px;}
+    </style>
+</head>
+<body onload="startTime()">
+    <div id="container">
+        <h2>Clock in JavaScript </h2>
+        <div id="txt"></div>
+        <span id="am-pm"></span>
+    </div>
+    <script>
+        function startTime() {
+        let today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+
+        let am_pm = document.getElementById("am-pm");
+        if(h>=12){
+            am_pm.innerHTML="PM";
+        }else{
+            am_pm.innerHTML="AM";
+        }
+
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+        }
+
+        function checkTime(i) {
+        if (i<10){
+            i = "0" + i
+        };                    // add zero in front of numbers < 10
+        return i;
+        }
+    </script>
+</body>
+</html>

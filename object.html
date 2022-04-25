@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object in javascript</title>
+</head>
+<body>
+    <script>
+        //object in javascript
+        let myobj={
+            name:'Raju',              //kye, value
+            roll:30,
+            course:'BCA',
+            city:'Meerut'
+        }
+          console.log(myobj);
+          console.log(myobj.city);
+        myobj.en_no=2383;
+          console.log(myobj);
+        myobj["state"]="up";
+          console.log(myobj);
+        delete myobj.name;
+          console.log(myobj);
+        let key=Object.keys(myobj);
+          console.log(key);
+        let value=Object.values(myobj);
+          console.log(value);
+        let entry=Object.entries(myobj);
+          console.log(entry);
+
+        //array in javascript
+        var obj=[10,20,30,40,50];
+         console.log(obj);
+           obj.unshift(5);            //starting me add hoga
+              console.log(obj);
+           obj.push(60);              //last me add hoga
+              console.log(obj);
+        // var nobj=obj.indexOf(70);
+        //    console.log(nobj);
+           obj.pop();                     //last se delete
+             console.log(obj);
+          var deleteVal= obj.pop();
+            console.log(deleteVal);                 
+          obj.shift();                 //starting se delete
+              console.log(obj);
+           obj.splice(1,2)              //kis index se kitna delete krna h
+              console.log(obj);
+           obj.reverse();               //reverse present obj
+              console.log(obj);
+        var obj2=[80,90,100];
+        obj=obj.concat(obj2);           //two object concat
+        console.log(obj);
+    </script>
+</body>
+</html>

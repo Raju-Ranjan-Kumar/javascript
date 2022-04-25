@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if else statement</title>
+</head>
+<body>
+    <p>What is codeword ?</p>
+    <p><input type="text" id="codeword"></p>
+    <p><button id="checkcodeword">Enter !</button></p>
+    <script>
+        document.getElementById("checkcodeword").onclick=function(){
+            var codewordIntered=document.getElementById("codeword").value;
+            var codeword="CodeAegis";
+            if(codewordIntered==codeword){
+                alert("You are welcome")
+            }
+            else{
+                alert("try again !")
+            }
+        }
+    </script>
+</body>
+</html>

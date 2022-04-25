@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script type="text/javascript">
+        var cars=["Swift", "Baleno", "Xuv"];
+          document.getElementById("demo").innerHTML=cars;
+        cars.push("Bmw");
+          document.getElementById("demo").innerHTML=cars;
+        cars[4]="Indigo";
+          document.getElementById("demo").innerHTML=cars;
+        cars.splice(2,0,"Innova","Fortuner");
+          document.getElementById("demo").innerHTML=cars;
+    </script>
+</body>
+</html>

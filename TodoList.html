@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do app</title>
+    <style>
+        body{font-family:"Poppins",sans-serif;}
+        .container{
+            padding: 10px;
+            background-color:greenyellow;
+            border: 2px solid #BCB9B8;
+            border-radius: 7px;
+            width: 40%;
+            margin: auto;
+        }
+        .container .input{ height: 25px; width: 80%; border-radius: 8px; }
+        .container .btn{ list-style: none; width: 11%; height: 27px; border-radius: 8px;}
+        .container ul{ height: 25px; width: 50px; border-radius: 8px;}
+        .container li{color: red;}
+        .container li a{float: right; color: #000; text-decoration: none; font-weight: bold;}
+        .container #error{ color: red; font-size: 14px;}
+        h2{ text-align: center; font-weight: bold; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>TO-DO LIST</h2>
+        <ul id="box"></ul>
+        <input type="text" id="name" class="input" placeholder="Title...">
+        <input type="button" value="Add" id="btnclick" class="btn" onclick="Addmore()"><br>
+        <span id="error"></span>
+    </div>
+    <script>
+        function Addmore(){
+            document.getElementById('error').innerHTML="";
+            let name=document.getElementById('name').value;
+            if(name==''){
+                document.getElementById('error').innerHTML="**Please Enter the value!";
+            }else{
+                let box=document.getElementById('box').value;
+
+                let li=document.createElement('li');
+                li.textContent=name;
+
+                let a=document.createElement('a');
+                a.textContent="X";
+                a.href="Javascript:void(0)";
+                a.className="remove";
+                li.appendChild(a);
+
+                let pos=box.firstElementChild.innerHTML;
+                // console.log(pos);
+
+                if(pos==null){
+                    box.appendChild(li);
+                }else{
+                    box.insertBefore(li,pos);
+                }
+            }
+            document.getElementById('name').value="";
+        }
+        let btn=document.querySelector('ul');
+        btn.addEventListener('click',function(e){
+            let box=document.getElementById('box');
+            let li=e.target.parentNode;
+            box.removeChild(li);
+        });
+    </script>
+</body>
+</html>
