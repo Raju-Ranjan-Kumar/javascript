@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <body>
+        <p>Traffic to your event page</p>
+        <canvas id="myChart" style="width:100%; max-width:500px"></canvas>
+        <script>
+            var xValues = ["Jan","Feb","Mar","Aprl","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+            var yValues = [0,90,50,110,120,180,120,110,50,90,0,40];
+
+            new Chart("myChart", {
+                type: "line",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        fill: true,
+                        lineTension:0,
+                        backgroundColor: "#dbfceb",
+                        borderColor: "blue",
+                        data: yValues,
+                        borderWidth:1.5,
+                    }]
+                },
+                options: {
+                    legend: {display: false},
+                    scales: {
+                        // yAxes: [{ticks:{min:0, max:200,}}],
+                        yAxes: [{gridLines:{display:false,}, ticks:{fontSize:10, fontColor:'black'}}],
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

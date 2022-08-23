@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>Angular Breadcrumb</title>
+    
+    <link data-require="bootstrap-css@3.1.*" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+
+  <body>
+    <div class="navbar navbar-default brg_olive_3d">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#/home">Angular Bread Crumb</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a ui-sref="home">
+              <i class="glyphicon glyphicon-home"></i> Home</a>
+          </li>
+          
+          <li>
+              <a ui-sref="home.about">
+                  <i class="glyphicon glyphicon-info-sign"></i> About
+              </a>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+   
+    <div class="breadcrumb" >
+        <div style="float:left">
+            <i class="glyphicon glyphicon-home"></i>&nbsp;
+        </div>
+        <div>
+            <ui-breadcrumbs displayname-property="data.displayName" abstract-proxy-property="data.proxy" template-url="ngBreadCrumbTemplate.html"></ui-breadcrumbs>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div ui-view="main"></div>
+    </div>
+    <footer class="brg_olive_3d"></footer>
+    
+  <script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script data-require="bootstrap@3.1.1" data-semver="3.1.1" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  
+  <script data-require="angular.js@1.2.15" data-semver="1.2.15" src="http://code.angularjs.org/1.2.15/angular.js"></script>
+  <script data-require="ui-router@*" data-semver="0.2.8" src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+  
+    
+    
+    
+    
+    /*<script data-require="ui-bootstrap@0.12.0" data-semver="0.12.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.min.js"></script>   */
+    
+    <script src="ngbreadcrumb.js"></script>
+    
+    <script src="App.js"></script>
+    
+  </body>
+
+</html>
+

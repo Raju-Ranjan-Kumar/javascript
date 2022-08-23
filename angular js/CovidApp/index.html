@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body ng-controller="MyCtrl">
+    <div class="container heading1">
+        <div class="jumbotron">
+            <h1 class="text-center text-dark pt-3">{{title}}</h1>
+            <p class="pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquam, iure iste adipisci eveniet numquam voluptatibus veritatis itaque? Unde, repellat. ipsum, dolor sit amet consectetur adipisicing elit. Vero pariatur magnam corporis tempora ratione cumque porro deserunt voluptate adipisci asperiores, tempore reiciendis nam distinctio, et dolorem odio alias sed ullam?</p>
+            <button class="btn bg-primary text-light mb-3" ng-click="changeValue()">Click me</button>
+
+            <!-- all_data -->
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body">
+                            <h3>Confirmed Cases</h3>
+                            <h3>{{all_data.confirmed.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <h3>Recovered Cases</h3>
+                            <h3>{{all_data.recovered.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body">
+                            <h3>Death Cases</h3>
+                            <h3>{{all_data.deaths.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="js/myscript.js"></script>
+</body>
+</html>
