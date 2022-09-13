@@ -4,54 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Object in javascript</title>
+    <title>Obj Var Arr in javascript</title>
 </head>
 <body>
     <script>
+        // let a = "Raju Ranjan Kumar";
+        // a = "change";
+        // console.log(a)
+
+        // function raj(b){
+        //     let a = b;
+        //     a = "change";
+        //     console.log(a)
+        // }
+        // raj(string = "raju");
+
         //object in javascript
         let myobj={
-            name:'Raju',              //kye, value
+            name:'Raju',     //kye, value
             roll:30,
             course:'BCA',
             city:'Meerut'
         }
-          console.log(myobj);
-          console.log(myobj.city);
-        myobj.en_no=2383;
-          console.log(myobj);
-        myobj["state"]="up";
-          console.log(myobj);
-        delete myobj.name;
-          console.log(myobj);
-        let key=Object.keys(myobj);
-          console.log(key);
-        let value=Object.values(myobj);
-          console.log(value);
-        let entry=Object.entries(myobj);
-          console.log(entry);
+            // console.log(myobj);
+            // console.log(myobj.name);
+        
+            // myobj.en_no=2383;
+            // console.log(myobj);
 
-        //array in javascript
-        var obj=[10,20,30,40,50];
-         console.log(obj);
-           obj.unshift(5);            //starting me add hoga
-              console.log(obj);
-           obj.push(60);              //last me add hoga
-              console.log(obj);
-        // var nobj=obj.indexOf(70);
-        //    console.log(nobj);
-           obj.pop();                     //last se delete
-             console.log(obj);
-          var deleteVal= obj.pop();
-            console.log(deleteVal);                 
-          obj.shift();                 //starting se delete
-              console.log(obj);
-           obj.splice(1,2)              //kis index se kitna delete krna h
-              console.log(obj);
-           obj.reverse();               //reverse present obj
-              console.log(obj);
-        var obj2=[80,90,100];
-        obj=obj.concat(obj2);           //two object concat
-        console.log(obj);
+            // myobj.state="up";
+            // console.log(myobj);
+
+            // myobj["country"]="India";
+            // console.log(myobj);
+
+            // delete myobj.name;
+            // console.log(myobj);
+
+            // let key = Object.keys(myobj);
+            // console.log(key);
+
+            // let value = Object.values(myobj);
+            // console.log(value);
+
+            // let entry = Object.entries(myobj);
+            // console.log(entry);
+
+
+        // //array in javascript
+        var arr = [10,20,30,40,50];
+
+            // console.log(arr);
+
+            // arr.unshift(100);           //starting me 0th location pr add hoga
+            // console.log(arr);
+
+            // arr.push(60);              //last location pr add hoga
+            // console.log(arr);
+
+            // var arr2 = arr.indexOf(-80);  //index number batayega
+            // console.log(arr2);
+
+            // arr.pop();                 //last location se delete hoga
+            // console.log(arr);
+
+            // var deleteVal = arr.pop();  //delete value show hoga
+            // console.log(deleteVal);
+
+            // arr.shift();                 //starting 0th location se delete hoga
+            // console.log(arr);
+
+            // arr.splice(1,2)              //kis index se kitna delete krna h
+            // console.log(arr);
+
+            // arr.reverse();              //reverse present obj
+            // console.log(arr);
+
+            var arr2 = [80,90,100];
+            arr = arr.concat(arr2);       //two object concat hoga 
+            console.log(arr);
     </script>
 </body>
 </html>
