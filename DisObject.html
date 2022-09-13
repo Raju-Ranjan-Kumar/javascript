@@ -9,20 +9,15 @@
         .circle{
             width: 150px;
             height: 150px;
-            /* border-radius: 50%; */
+            border-radius: 50%;
             float: left;
             margin-right: 50px;
             text-align: center;
+            padding-top:10%;
         }
-        #red-circle{
-            background-color: red;
-        }
-        #blue-circle{
-            background-color: blue;
-        }
-        #yellow-circle{
-            background-color: yellow;
-        }
+        #red-circle{ background-color: red; }
+        #blue-circle{ background-color: blue; }
+        #yellow-circle{ background-color:yellow; }
     </style>
 </head>
 <body>
@@ -31,17 +26,14 @@
     <div class="circle" id="yellow-circle"> Yellow </div>
     <script>
         document.getElementById("red-circle").onclick=function(){
-            document.getElementById("red-circle").style.display="none";
+            document.getElementById("red-circle").style.backgroundColor="green";
         }
         document.getElementById("blue-circle").onclick=function(){
-            document.getElementById("blue-circle").style.borderRadius="300px";
+            document.getElementById("blue-circle").style.borderRadius="10%";
         }
         document.getElementById("yellow-circle").onclick=function(){
-            document.getElementById("yellow-circle").style.backgroundColor="brown";
+            document.getElementById("yellow-circle").innerHTML="Hello World";
         }
-        // document.getElementById("red-circle").onclick=function(){
-        //     document.getElementById("red-circle").innerHTML="Hello World";
-        // }
     </script>
 </body>
 </html>

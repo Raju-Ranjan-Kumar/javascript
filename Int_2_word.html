@@ -69,16 +69,10 @@
         
         //code testing start here
         function main() {
-            // var cases = [0, 1, 2, 7, 10, 11,19, 20, 29, 31, 39, 41, 49, 50, 55, 63, 70, 99, 100, 137, 199, 411, 500];
-            // for (var i = 0; i < cases.length; i++) {
-            //     console.log(cases[i] + ": " + convert(cases[i]));
-            // }
+            var cases = document.getElementById("Integer").value;
 
-            var cases =document.getElementById("Integer").value;
-            // console.log(convert(cases));
-
-            let box=document.createElement('div')
-            box.innerHTML=convert(cases);
+            let box = document.createElement('div')
+            box.innerHTML = convert(cases);
             document.getElementById('section').appendChild(box);
         }
         document.getElementById("submit").addEventListener("click",main)

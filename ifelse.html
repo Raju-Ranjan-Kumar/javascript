@@ -8,16 +8,15 @@
 </head>
 <body>
     <p>What is codeword ?</p>
-    <p><input type="text" id="codeword"></p>
+    <p><input type="text" id="codewordv"></p>
     <p><button id="checkcodeword">Enter !</button></p>
     <script>
         document.getElementById("checkcodeword").onclick=function(){
-            var codewordIntered=document.getElementById("codeword").value;
-            var codeword="CodeAegis";
-            if(codewordIntered==codeword){
+            let codewordIntered = document.getElementById("codewordv").value;
+            let codeword = "CodeAegis";
+            if(codewordIntered == codeword){
                 alert("You are welcome")
-            }
-            else{
+            }else{
                 alert("try again !")
             }
         }
